@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#复制不同件夹下的件，到一个指定目录
 result_dir="zoe_result"
 mkdir ${result_dir}
 
