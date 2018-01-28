@@ -1,15 +1,14 @@
-#!/bin/bash
-#1.注意[]符号与语句之间要有空格隔开
-#2.then 单独起一行
-#3.小于要用-lt
- 
-for number in `seq 9 11` 
-do
-	echo ${number}
-	if [ ${number} -lt 10 ] 
-	then 
-		wget "http://www.baidu.com/0${number}.jpg"
-	else
-		wget "http://www.baidu.com/${number}.jpg"
+#/bin/sh
+#cat build.prop | xargs -n 1 ./test.sh
+#查看文件build.prop中的每一行是否在awk.tmp.txt中出现
+
+#for str in $@
+#do
+	str=$1
+	RESULT=`grep $str awk.tmp.txt`
+	#echo $RESULT
+	if [ -z "$RESULT" ]
+	then
+		echo "don't have $str"
 	fi
-done
+#done
